@@ -1,0 +1,196 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Anniversary Message */
+.message h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.message p {
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Photo Collage */
+.photo-collage {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.photo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  object-fit: cover;
+}
+
+/* 3D Rotating Cube */
+.cube {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  transform-style: preserve-3d;
+  animation: rotate 8s infinite linear;
+}
+
+.cube .face {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.cube .face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.front {
+  transform: rotateY(0deg) translateZ(75px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(75px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(75px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(75px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(75px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(75px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+/* Floating Effects */
+.effects {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.effect {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  animation: float 6s infinite;
+}
+
+.heart {
+  background: red;
+  transform: rotate(45deg);
+  clip-path: polygon(50% 0%, 100% 30%, 75% 100%, 50% 75%, 25% 100%, 0% 30%);
+}
+
+.star {
+  background: white;
+  box-shadow: 0 0 10px white;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-10vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Footer */
+footer p {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* Video Section */
+.video-section video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .message h1 {
+    font-size: 2rem;
+  }
+
+  .message p {
+    font-size: 1rem;
+  }
+
+  .photo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cube {
+    width: 120px;
+    height: 120px;
+  }
+}
